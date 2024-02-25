@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>FLOWER SEACHER</title>
+</head>
+
+<body>
+    <h2>ハムスター識別アプリ</h2>
+    <h1>Hamsters Searcher</h1>
+    <p>
+        Hamsters Searcherは、入力されたハムスターの種類を認識するアプリです。
+        <br />
+        認識したいハムスターの画像をアップロードしてみましょう。
+    </p>
+    <form enctype="multipart/form-data" action="{% url 'animal:upload' %}" method="POST">
+        {% csrf_token %} {{form.as_p}}
+        <br />
+        <button type="submit">Upload</button>
+        <a href="{% url 'animal:showall' %}">過去の結果一覧を見る</a>
+    </form>
+</body>
+
+</html>

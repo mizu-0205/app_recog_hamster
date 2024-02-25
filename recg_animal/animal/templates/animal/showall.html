@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RESULT</title>
+</head>
+
+<body>
+    <h1>過去の結果一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>画像 \ 確率</th>
+                <th>1st</th>
+                <th>2nd</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image in images %}
+            <tr>
+                <th><img src="{{ image.picture.url }}" height="70" /></th>
+                <td>
+                    <h3>
+                        {{ image.first_name }}<br />
+                        {{ image.first_value }}%
+                    </h3>
+                </td>
+                <td>
+                    <h3>
+                        {{ image.second_name }}<br />
+                        {{ image.second_value }}%
+                    </h3>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <a href="{% url 'animal:upload' %}">Upload more</a>
+    <br />
+</body>
+
+</html>
