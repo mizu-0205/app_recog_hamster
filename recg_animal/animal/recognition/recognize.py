@@ -13,7 +13,7 @@ def main(img_path):
     model_path = "animal/recognition/save_model/model_20.pth"
     label = [
         "djungarian",
-        "kinkuma"
+        "golden"
     ]
 
     num_classes = 2
